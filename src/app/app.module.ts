@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 // Third party modules
@@ -19,6 +20,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     Routing,
     MaterialModule,
     BrowserAnimationsModule,
