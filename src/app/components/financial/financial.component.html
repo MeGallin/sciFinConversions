@@ -1,0 +1,39 @@
+<button mat-raised-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+    Choose Calculation
+  </button>
+  
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="showHomeValue = !showHomeValue">Home Future Value</button>
+    <button mat-menu-item (click)="showLoanCalculator = !showLoanCalculator">Home loan Calculator</button>
+  </mat-menu>
+
+<section id="finacial" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="36px" fxLayoutGap.xs="0">
+  
+  <div *ngIf="showHomeValue">
+      <form [formGroup]="formHomeValue" 
+      (ngSubmit)="convertHv(
+                  formHomeValue.value.hval, 
+                  formHomeValue.value.period, 
+                  formHomeValue.value.appriciation )">
+          <mat-form-field>
+            <input matInput formControlName="hval" placeholder="Home Value" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input matInput formControlName="period" placeholder="Period" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput formControlName="appriciation" placeholder="annualAppriciation" required>
+              </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="formHomeValue.invalid">Get Value</button>
+      </form>
+      <div *ngIf="futureHomeValue">
+         Your house will be worth {{futureHomeValue | currency:'':''}} in {{term}} years time.
+      </div>
+  </div>
+
+  <div *ngIf="showLoanCalculator">
+    Loan calculator coming
+  </div>
+    
+</section>
