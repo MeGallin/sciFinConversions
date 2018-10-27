@@ -1,0 +1,20 @@
+<h3>Future Value</h3>
+<form [formGroup]="formFutureValue" (ngSubmit)="converFutureValue(
+      formFutureValue.value.pv,
+      formFutureValue.value.term,
+      formFutureValue.value.interestRate      
+      )">
+  <mat-form-field>
+    <input matInput formControlName="pv" placeholder="Investment Amount" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="term" placeholder="Period" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="interestRate" placeholder="Expected Return %" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="formFutureValue.invalid">Calculate Loan</button>
+</form>
+<div *ngIf="fv">
+  <p>If you invested {{pv | currency:'':''}} it will be worth {{fv | currency:'':''}} in {{nTerm}} year time </p>
+</div>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class FinacialService {
+export class FinancialService {
 
   constructor() { }
   futureHomeValue(e, f, g) {

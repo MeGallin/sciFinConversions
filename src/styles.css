@@ -4,3 +4,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+/* Ga Helper classes */
+.border-temp {
+border: red 1px solid;
+}
