@@ -1,8 +1,8 @@
 <h3>Future Value of Home</h3>
-<form [formGroup]="formHomeValue" (ngSubmit)="convertHv(
-                  formHomeValue.value.hval, 
-                  formHomeValue.value.period, 
-                  formHomeValue.value.appriciation )">
+<form [formGroup]="form" (ngSubmit)="convertHv(
+                  form.value.hval, 
+                  form.value.period, 
+                  form.value.appriciation )">
   <mat-form-field>
     <input matInput formControlName="hval" placeholder="Home Value" required>
   </mat-form-field>
@@ -12,7 +12,7 @@
   <mat-form-field>
     <input matInput formControlName="appriciation" placeholder="Annual Appriciation %" required>
   </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="formHomeValue.invalid">Get Value</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Get Value</button>
 </form>
 <div *ngIf="futureHomeValue">
   <p>Your house will be worth {{futureHomeValue | currency:'':''}} in {{term}} years time.</p>

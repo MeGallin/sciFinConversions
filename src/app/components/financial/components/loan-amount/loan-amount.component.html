@@ -1,0 +1,20 @@
+<h3>Loan Amount Calculation</h3>
+<form [formGroup]="form" (ngSubmit)="convertLoanAmount(
+      form.value.pv,
+      form.value.term,
+      form.value.interestRate      
+      )">
+  <mat-form-field>
+    <input matInput formControlName="pv" placeholder="Monthly Contribution" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="term" placeholder="Period" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="interestRate" placeholder="Interest Rate %" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate Loan Amount</button>
+</form>
+<div *ngIf="pmt">
+  <p>You can borrow {{pmt | currency:'':''}} by paying {{pv | currency:'':''}} a month for {{n}} years.</p>
+</div>

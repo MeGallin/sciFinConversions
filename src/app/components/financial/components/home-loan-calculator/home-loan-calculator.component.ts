@@ -9,7 +9,7 @@ import { IFinancial } from "../../model/financial-model";
   styleUrls: ["./home-loan-calculator.component.css"]
 })
 export class HomeLoanCalculatorComponent implements OnInit {
-  formHomeLoan: FormGroup;
+  form: FormGroup;
   pmt: number;
   pv: IFinancial;
   n: IFinancial;
@@ -18,7 +18,7 @@ export class HomeLoanCalculatorComponent implements OnInit {
   constructor(private finService$: FinancialService) {}
 
   ngOnInit() {
-    this.formHomeLoan = new FormGroup({
+    this.form = new FormGroup({
       pv: new FormControl("", Validators.required),
       term: new FormControl("", Validators.required),
       interestRate: new FormControl("", Validators.required)

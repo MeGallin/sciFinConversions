@@ -9,16 +9,17 @@ import { IFinancial } from "../../model/financial-model";
   styleUrls: ["./future-value-home.component.css"]
 })
 export class FutureValueHomeComponent implements OnInit {
+  form: FormGroup;
   futureHomeValue: number;
   hv: IFinancial;
   annualAppriciation: IFinancial;
   term: IFinancial;
 
   constructor(private finService$: FinancialService) {}
-  formHomeValue: FormGroup;
+  
 
   ngOnInit() {
-    this.formHomeValue = new FormGroup({
+    this.form = new FormGroup({
       hval: new FormControl("", Validators.required),
       period: new FormControl("", Validators.required),
       appriciation: new FormControl("", Validators.required)
@@ -29,7 +30,6 @@ export class FutureValueHomeComponent implements OnInit {
     this.hv = homeValue;
     this.term = period;
     this.annualAppriciation = appreciation;
-
     this.futureHomeValue = this.finService$.futureHomeValue(
       this.hv,
       this.term,

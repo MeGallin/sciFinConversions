@@ -9,7 +9,7 @@ import { IFinancial } from "../../model/financial-model";
   styleUrls: ["./future-value-investment.component.css"]
 })
 export class FutureValueInvestmentComponent implements OnInit {
-  formFutureValue: FormGroup;
+  form: FormGroup;
 
   pv: IFinancial;
   n: IFinancial;
@@ -19,7 +19,7 @@ export class FutureValueInvestmentComponent implements OnInit {
   constructor(private finService$: FinancialService) {}
 
   ngOnInit() {
-    this.formFutureValue = new FormGroup({
+    this.form = new FormGroup({
       pv: new FormControl("", Validators.required),
       term: new FormControl("", Validators.required),
       interestRate: new FormControl("", Validators.required)
