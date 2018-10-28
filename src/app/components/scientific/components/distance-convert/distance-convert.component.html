@@ -1,0 +1,23 @@
+<h3>Distance Conversions</h3>
+<form [formGroup]="formMiles" (ngSubmit)="convertKm(formMiles.value.kilometer)">
+    <mat-form-field>
+      <input matInput formControlName="kilometer" placeholder="kM" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="formMiles.invalid">To Miles</button>
+  </form>
+  <div *ngIf="mile">
+    
+    {{kiloMeter | number : '1.2-2'}} <span>{{mile > 1?'kM\'s' : 'kM'}}</span> is equal to
+    {{mile | number : '1.2-2'}} Miles
+  </div>
+
+  <form [formGroup]="formMetre" (ngSubmit)="convertMetre(formMetre.value.metre)">
+      <mat-form-field>
+        <input matInput formControlName="metre" placeholder="Metre" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="formMetre.invalid">To Feet</button>
+    </form>
+    <div *ngIf="foot">
+      {{metre | number : '1.2-2'}} <span>{{metre > 1?'metre\'s' : 'm'}}</span> is equal to
+      {{foot | number : '1.2-2'}} ft
+    </div>

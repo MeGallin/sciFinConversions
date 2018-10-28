@@ -20,6 +20,9 @@ import { FutureValueHomeComponent } from './components/financial/components/futu
 import { HomeLoanCalculatorComponent } from './components/financial/components/home-loan-calculator/home-loan-calculator.component';
 import { FutureValueInvestmentComponent } from './components/financial/components/future-value-investment/future-value-investment.component';
 import { LoanAmountComponent } from './components/financial/components/loan-amount/loan-amount.component';
+import { HorsePowerComponent } from './components/scientific/components/horse-power/horse-power.component';
+import { DistanceConvertComponent } from './components/scientific/components/distance-convert/distance-convert.component';
+import { SpeedConvertComponent } from './components/scientific/components/speed-convert/speed-convert.component';
 
 
 
@@ -37,7 +40,10 @@ import { LoanAmountComponent } from './components/financial/components/loan-amou
     FutureValueHomeComponent,
     HomeLoanCalculatorComponent,
     FutureValueInvestmentComponent,
-    LoanAmountComponent
+    LoanAmountComponent,
+    HorsePowerComponent,
+    DistanceConvertComponent,
+    SpeedConvertComponent
   ],
   imports: [
     BrowserModule,
