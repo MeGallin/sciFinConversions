@@ -2,5 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body {
+    min-height: 100vh;
+}
+section {
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
+}
+
+/* Ga Helper classes */
+.border-temp {
+border: red 1px solid;
 }

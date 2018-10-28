@@ -16,6 +16,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FinancialComponent } from './components/financial/financial.component';
 import { ScientificComponent } from './components/scientific/scientific.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { FutureValueHomeComponent } from './components/financial/components/future-value-home/future-value-home.component';
+import { HomeLoanCalculatorComponent } from './components/financial/components/home-loan-calculator/home-loan-calculator.component';
+import { FutureValueInvestmentComponent } from './components/financial/components/future-value-investment/future-value-investment.component';
+import { LoanAmountComponent } from './components/financial/components/loan-amount/loan-amount.component';
+import { HorsePowerComponent } from './components/scientific/components/horse-power/horse-power.component';
+import { DistanceConvertComponent } from './components/scientific/components/distance-convert/distance-convert.component';
+import { SpeedConvertComponent } from './components/scientific/components/speed-convert/speed-convert.component';
 
 
 
@@ -29,7 +36,14 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    FutureValueHomeComponent,
+    HomeLoanCalculatorComponent,
+    FutureValueInvestmentComponent,
+    LoanAmountComponent,
+    HorsePowerComponent,
+    DistanceConvertComponent,
+    SpeedConvertComponent
   ],
   imports: [
     BrowserModule,

@@ -17,4 +17,13 @@ export class ScientificService {
     const metre = met;
     return (metre * 3.280839895);
   }
+  speed(dist, t){
+    const distance = dist;
+    const time = t;
+    return (distance / time);
+  }
+  metersPerSecondToKPH(s){
+    const speed  = s;
+    return (s * 3.6);
+  }
 }

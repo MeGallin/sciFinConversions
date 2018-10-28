@@ -1,53 +1,26 @@
-
 <button mat-raised-button [matMenuTriggerFor]="menu">
   <mat-icon>more_vert</mat-icon>
-  Choose Conversion
+  Choose a Conversion
 </button>
 
 <mat-menu #menu="matMenu">
   <button mat-menu-item (click)="showPower = !showPower">Power Conversions</button>
   <button mat-menu-item (click)="showDistance = !showDistance">Distance Conversions</button>
+  <button mat-menu-item (click)="showSpeed = !showSpeed">Speed Conversions</button>
 </mat-menu>
 
-<section id="financial" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="36px" fxLayoutGap.xs="0">
+<h3>Scientific Calculations</h3>
 
+<section id="scientific" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="36px" fxLayoutGap.xs="0">
   <div *ngIf="showPower">
-    <form [formGroup]="formHp" (ngSubmit)="convertHp(formHp.value.horsePower)">
-      <mat-form-field>
-        <input matInput formControlName="horsePower" placeholder="BHP" required>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="formHp.invalid">To kW</button>
-    </form>
-    <div *ngIf="kiloWatt">
-      {{horsePower | number : '1.2-2'}} BHP is equal to
-      {{kiloWatt | number : '1.2-2'}} kW
-    </div>
+    <app-horse-power></app-horse-power>
   </div>
 
   <div *ngIf="showDistance">
-    <form [formGroup]="formMiles" (ngSubmit)="convertKm(formMiles.value.kilometer)">
-      <mat-form-field>
-        <input matInput formControlName="kilometer" placeholder="kM" required>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="formMiles.invalid">To Miles</button>
-    </form>
-    <div *ngIf="mile">
-      
-      {{kiloMeter | number : '1.2-2'}} <span>{{mile > 1?'kM\'s' : 'kM'}}</span> is equal to
-      {{mile | number : '1.2-2'}} Miles
-    </div>
+    <app-distance-convert></app-distance-convert>
   </div>
 
-  <div *ngIf="showDistance">
-    <form [formGroup]="formMetre" (ngSubmit)="convertMetre(formMetre.value.metre)">
-      <mat-form-field>
-        <input matInput formControlName="metre" placeholder="Metre" required>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" [disabled]="formMetre.invalid">To Feet</button>
-    </form>
-    <div *ngIf="foot">
-      {{metre | number : '1.2-2'}} <span>{{metre > 1?'metre\'s' : 'm'}}</span> is equal to
-      {{foot | number : '1.2-2'}} ft
-    </div>
+  <div *ngIf="showSpeed">
+    <app-speed-convert></app-speed-convert>
   </div>
 </section>
