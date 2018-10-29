@@ -1,11 +1,13 @@
-<h3>Power Conversions</h3>
-<form [formGroup]="form" (ngSubmit)="convertHp(form.value.horsePower)">
-  <mat-form-field>
-    <input matInput formControlName="horsePower" placeholder="BHP" required>
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">To kW</button>
-</form>
-<div *ngIf="kiloWatt">
-  {{horsePower | number : '1.2-2'}} BHP is equal to
-  {{kiloWatt | number : '1.2-2'}} kW
-</div>
+<mat-card>
+  <h3>Power Conversions</h3>
+  <form [formGroup]="form" (ngSubmit)="convertHp(form.value.horsePower)">
+    <mat-form-field>
+      <input matInput formControlName="horsePower" placeholder="BHP" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">To kW</button>
+  </form>
+  <div *ngIf="kiloWatt">
+    {{horsePower | number : '1.2-2'}} BHP is equal to
+    {{kiloWatt | number : '1.2-2'}} kW
+  </div>
+</mat-card>

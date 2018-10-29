@@ -1,3 +1,4 @@
+<mat-card>
 <h3>Future Value of Home</h3>
 <form [formGroup]="form" (ngSubmit)="convertHv(
                   form.value.hval, 
@@ -17,3 +18,4 @@
 <div *ngIf="futureHomeValue">
   <p>Your house will be worth {{futureHomeValue | currency:'':''}} in {{term}} years time.</p>
 </div>
+</mat-card>

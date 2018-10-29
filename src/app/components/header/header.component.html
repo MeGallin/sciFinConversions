@@ -1,7 +1,34 @@
 <header class="sticky_header">
   <mat-toolbar color="primary">
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/financial" routerLinkActive="active">Financial</a>
-    <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
+
+    <div *ngIf="innerWidth > 600" fxLayout fxLayout.xs="row" fxLayoutAlign="space-around center" fxLayoutGap="36px"
+      fxLayoutGap.xs="0">
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/financial" routerLinkActive="active">Financial</a>
+      <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
+    </div>
+
+    <div *ngIf="innerWidth < 600">
+      <span class="fill-remaining-space">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item>
+            <mat-icon>home</mat-icon>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>people_outline</mat-icon>
+            <a routerLink="/financial" routerLinkActive="active">Financial</a>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>videocam</mat-icon>
+            <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
+          </button>
+        </mat-menu>
+      </span>
+    </div>
+
   </mat-toolbar>
 </header>

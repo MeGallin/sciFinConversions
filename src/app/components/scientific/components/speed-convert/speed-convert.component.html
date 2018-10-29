@@ -1,17 +1,19 @@
-<h3>Average Speed</h3>
-<form [formGroup]="form" (ngSubmit)="convertSpeed(form.value.distance, form.value.time)">
-  <mat-form-field>
-    <input matInput formControlName="distance" placeholder="Distance" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="time" placeholder="Time" required>
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate</button>
+<mat-card>
+  <h3>Average Speed</h3>
+  <form [formGroup]="form" (ngSubmit)="convertSpeed(form.value.distance, form.value.time)">
+    <mat-form-field>
+      <input matInput formControlName="distance" placeholder="Distance" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="time" placeholder="Time" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate</button>
 
-  <div *ngIf="speed">
-    <p>If you cover {{distance}} metres in {{time}} seconds, your average speed is
-      <span>{{showKPH ? (speedKPH|number) : (speed|number)}} {{showKPH ? 'km/h':'m/s'}}</span>
-    </p>
-    <mat-checkbox formControlName="kph" (click)="convertToKilometers()">{{checkBoxMessage}}</mat-checkbox>
-  </div>
-</form>
+    <div *ngIf="speed">
+      <p>If you cover {{distance}} metres in {{time}} seconds, your average speed is
+        <span>{{showKPH ? (speedKPH|number) : (speed|number)}} {{showKPH ? 'km/h':'m/s'}}</span>
+      </p>
+      <mat-checkbox formControlName="kph" (click)="convertToKilometers()">{{checkBoxMessage}}</mat-checkbox>
+    </div>
+  </form>
+</mat-card>

@@ -1,20 +1,22 @@
-<h3>Future Value</h3>
-<form [formGroup]="form" (ngSubmit)="converFutureValue(
+<mat-card>
+  <h3>Future Value</h3>
+  <form [formGroup]="form" (ngSubmit)="converFutureValue(
       form.value.pv,
       form.value.term,
       form.value.interestRate      
       )">
-  <mat-form-field>
-    <input matInput formControlName="pv" placeholder="Investment Amount" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="term" placeholder="Period" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="interestRate" placeholder="Expected Return %" required>
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate Loan</button>
-</form>
-<div *ngIf="fv">
-  <p>If you invested {{pv | currency:'':''}} it will be worth {{fv | currency:'':''}} in {{nTerm}} year time </p>
-</div>
+    <mat-form-field>
+      <input matInput formControlName="pv" placeholder="Investment Amount" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="term" placeholder="Period" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="interestRate" placeholder="Expected Return %" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate Loan</button>
+  </form>
+  <div *ngIf="fv">
+    <p>If you invested {{pv | currency:'':''}} it will be worth {{fv | currency:'':''}} in {{nTerm}} year time </p>
+  </div>
+</mat-card>
