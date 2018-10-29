@@ -1,20 +1,22 @@
-<h3>Home Loan Calculation</h3>
-<form [formGroup]="form" (ngSubmit)="convertLoan(
+<mat-card>
+  <h3>Home Loan Calculation</h3>
+  <form [formGroup]="form" (ngSubmit)="convertLoan(
       form.value.pv,
       form.value.term,
       form.value.interestRate      
       )">
-  <mat-form-field>
-    <input matInput formControlName="pv" placeholder="Loan Amount" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="term" placeholder="Period" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="interestRate" placeholder="Interest Rate %" required>
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate Loan</button>
-</form>
-<div *ngIf="pmt">
-  <p>Your monthly payments are {{pmt | currency:'':''}}</p>
-</div>
+    <mat-form-field>
+      <input matInput formControlName="pv" placeholder="Loan Amount" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="term" placeholder="Period" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="interestRate" placeholder="Interest Rate %" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Calculate Loan</button>
+  </form>
+  <div *ngIf="pmt">
+    <p>Your monthly payments are {{pmt | currency:'':''}}</p>
+  </div>
+</mat-card>
