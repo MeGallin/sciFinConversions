@@ -6,5 +6,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./financial.component.css"]
 })
 export class FinancialComponent {
+  showHomeValue;
+  showLoanCalculator;
+  showFutureValue;
+  showLoanAmount;
+
   constructor() {}
 }
