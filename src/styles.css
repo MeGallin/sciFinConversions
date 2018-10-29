@@ -11,11 +11,7 @@ body {
   min-height: 100%;
 }
 .wrapper {
-<<<<<<< HEAD
-  padding: 16px;
-=======
     padding: 0 16px;
->>>>>>> development
 }
 
 /* Ga Helper classes */
