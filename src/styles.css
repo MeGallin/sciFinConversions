@@ -11,7 +11,20 @@ body {
   min-height: 100%;
 }
 .wrapper {
-    padding: 0 16px;
+  padding: 0 16px;
+}
+footer {
+  padding: 0 16px;
+}
+hr.custom-hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 /* Ga Helper classes */
