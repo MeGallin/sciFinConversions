@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 // Third party modules
@@ -23,8 +24,7 @@ import { LoanAmountComponent } from './components/financial/components/loan-amou
 import { HorsePowerComponent } from './components/scientific/components/horse-power/horse-power.component';
 import { DistanceConvertComponent } from './components/scientific/components/distance-convert/distance-convert.component';
 import { SpeedConvertComponent } from './components/scientific/components/speed-convert/speed-convert.component';
-
-
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 
 
@@ -43,7 +43,8 @@ import { SpeedConvertComponent } from './components/scientific/components/speed-
     LoanAmountComponent,
     HorsePowerComponent,
     DistanceConvertComponent,
-    SpeedConvertComponent
+    SpeedConvertComponent,
+    ContactFormComponent    
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,8 @@ import { SpeedConvertComponent } from './components/scientific/components/speed-
     Routing,
     MaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

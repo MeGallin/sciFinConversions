@@ -1,0 +1,42 @@
+<mat-card>
+  <form
+    *ngIf="!thankYouMessage"
+    [formGroup]="contactForm"
+    (ngSubmit)="sendMessage(contactForm.value)"
+  >
+    <h4>Contact Me</h4>
+    <mat-form-field class="contact-form-full-width">
+      <input matInput formControlName="name" placeholder="Name" required />
+    </mat-form-field>
+    <mat-form-field class="contact-form-full-width">
+      <input matInput formControlName="email" placeholder="Email" required />
+      <mat-error *ngIf="contactForm.value"
+        >ERROR - Please enter a valid email address</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field class="contact-form-full-width">
+      <textarea
+        matInput
+        formControlName="message"
+        placeholder="Message"
+        required
+      ></textarea>
+    </mat-form-field>
+    <br />
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="contactForm.invalid"
+    >
+      Send Message
+    </button>
+  </form>
+
+  <div *ngIf="thankYouMessage">
+    <p>{{ thankYouMessage }}</p>
+    <p *ngIf="!typeWriter">Gary</p>
+    <p>{{ typeWriter | async }}</p>
+  </div>
+</mat-card>
