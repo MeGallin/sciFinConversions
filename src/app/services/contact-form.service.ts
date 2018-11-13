@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class ContactFormService {
  // private _contactUrl = 'https://www.scifin.livenotice.co.uk/assets/api/sendMe.php';
-  private _contactUrl = 'https://www.scifin.livenotice.co.uk/assets/request.php';
+  // private _contactUrl = 'https://www.scifin.livenotice.co.uk/assets/request.php';
+  private _contactUrl = '../assets/request.php';
 
   constructor(private _http: HttpClient) { }
 
