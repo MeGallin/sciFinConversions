@@ -1,16 +1,21 @@
 <footer>
   <hr class="custom-hr" />
-  <div
-    fxLayout
-    fxLayout.xs="column"
-    fxLayoutAlign="space-between none"
-    fxLayoutGap="2px"
-  >
-    <app-contact-form></app-contact-form>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="12px">
+    <div fxFlex="30%"><app-contact-form></app-contact-form></div>
 
-    <div fxFlex="15%"><app-calendar></app-calendar></div>
-    <mat-card fxHide.xs> {{ showBilliton }} </mat-card>
-    <mat-card fxHide.xs> {{ showBilliton }} </mat-card>
+    <mat-card fxFlex="15%">
+      <app-calendar></app-calendar>
+      <mat-card-content> {{ showBilliton }} </mat-card-content>
+    </mat-card>
+
+    <mat-card fxHide.xs fxFlex="30%">
+      <mat-card-title>Bulletin</mat-card-title>
+      <mat-card-content> {{ showBilliton }} </mat-card-content>
+      <mat-card-title>Bulletin 2</mat-card-title>
+      <mat-card-content> {{ showBilliton }} </mat-card-content>
+      <mat-card-title>Bulletin 3</mat-card-title>
+      <mat-card-content> Site by GG Allin </mat-card-content>
+    </mat-card>
   </div>
   <hr class="custom-hr" />
   <div fxLayout="row" fxLayoutAlign="space-around center">
