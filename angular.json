@@ -150,7 +150,8 @@
               "projects/routes/src/assets"
             ],
             "styles": [
-              "projects/routes/src/styles.css"
+              "projects/routes/src/styles.css",
+              "node_modules/jqwidgets-scripts/jqwidgets/styles/jqx.base.css"
             ],
             "scripts": []
           },
