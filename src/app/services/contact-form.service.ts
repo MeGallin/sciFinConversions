@@ -21,7 +21,7 @@ sendMail(message){
     return response;
   }),  
       (err) => {
-        console.log('There was an error', err);
+     //   console.log('There was an error', err);
         return err;
       });
 }

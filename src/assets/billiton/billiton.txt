@@ -1,3 +1,1 @@
-This is the first message for the bulletin  components in the footer. This should now be edited. It will interesting to see if i can add html here. No looks
-like it can only be text.
-I really need to find a nice place for the claendar.
+This is the first message for the bulletin  components in the footer.

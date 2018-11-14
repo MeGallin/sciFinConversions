@@ -6,13 +6,21 @@ $postdata = file_get_contents("php://input");
 if(isset($postdata) && !empty($postdata)) {
     $_REQUEST = json_decode($postdata, true);
 
+    
+
 $my_email = "gary.allin@gmail.com,me@garyallin.uk";
 $from_email = "";
 $continue = "http://www.garyallin.uk";
 $errors = array();
 
-// Remove $_COOKIE elements from $_REQUEST.
+// This is to check for the hidden field to kill bots..by GA
+if(isset($_REQUEST['hiddenName']) && !empty($_REQUEST['hiddenName'])) {
+    die('You are not human!' . '<a href="http://www.yahoo.com"> Click here to try again</a>');
+   }
 
+
+
+// Remove $_COOKIE elements from $_REQUEST.
 if(count($_COOKIE)){foreach(array_keys($_COOKIE) as $value){unset($_REQUEST[$value]);}}
 
 // Validate email field.

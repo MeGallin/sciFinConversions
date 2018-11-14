@@ -1,11 +1,13 @@
-<mat-card>
+
   <form
     *ngIf="!thankYouMessage"
     [formGroup]="contactForm"
     (ngSubmit)="sendMessage(contactForm.value)"
   >
     <h4>Contact Me</h4>
-    <input type="text" formControlName="hiddenName" placeholder="Hidden Name">
+    <div class="hidden">
+        <input type="text" formControlName="hiddenName" placeholder="Hidden Name">
+    </div>    
     <mat-form-field class="contact-form-full-width">
       <input matInput formControlName="name" placeholder="Name" required />
     </mat-form-field>
@@ -40,4 +42,4 @@
     <p *ngIf="!typeWriter">Gary</p>
     <p>{{ typeWriter | async }}</p>
   </div>
-</mat-card>
+

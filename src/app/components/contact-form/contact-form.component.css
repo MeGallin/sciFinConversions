@@ -1,3 +1,8 @@
+.hidden {
+  display: none;
+}
+
+
 .contact-form-full-width {
   width: 100%;
 }

@@ -31,12 +31,12 @@ export class ContactFormComponent implements OnInit {
 
   sendMessage(message) {
     // console.log(e);
-    console.log(JSON.stringify(message));
+   // console.log(JSON.stringify(message));
     this.contactFormService.sendMail(JSON.stringify(message)).subscribe(res => {
-      console.log("Contact form done", res);
+   //   console.log("Contact form done", res);
     },  
     (err) => {
-      console.log('There was an error', err);
+    //  console.log('There was an error', err);
       return err;
     });
 
