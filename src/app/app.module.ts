@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
-
-import { AppComponent } from './app.component';
-// Third party modules
-import { MaterialModule } from './material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { HttpClientModule } from '@angular/common/http';
 // Routing
 import { Routing } from './routes';
 // Componenets
+import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -25,7 +20,14 @@ import { HorsePowerComponent } from './components/scientific/components/horse-po
 import { DistanceConvertComponent } from './components/scientific/components/distance-convert/distance-convert.component';
 import { SpeedConvertComponent } from './components/scientific/components/speed-convert/speed-convert.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
+// Third party modules
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { jqxCalendarComponent  } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcalendar';
+import { jqxGaugeComponent  } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgauge';
 
 
 @NgModule({
@@ -44,7 +46,10 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     HorsePowerComponent,
     DistanceConvertComponent,
     SpeedConvertComponent,
-    ContactFormComponent    
+    ContactFormComponent,
+    CalendarComponent,
+    jqxCalendarComponent,
+    jqxGaugeComponent          
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,7 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
