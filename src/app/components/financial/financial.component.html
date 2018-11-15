@@ -4,15 +4,30 @@
 </button>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="showHomeValue = !showHomeValue">Home Future Value</button>
-  <button mat-menu-item (click)="showLoanCalculator = !showLoanCalculator">Home loan Calculator</button>
-  <button mat-menu-item (click)="showFutureValue = !showFutureValue">Future Value</button>
-  <button mat-menu-item (click)="showLoanAmount = !showLoanAmount">Loan Amount</button>
+  <button mat-menu-item (click)="showHomeValue = !showHomeValue">
+    Home Future Value
+  </button>
+  <button mat-menu-item (click)="showLoanCalculator = !showLoanCalculator">
+    Home loan Calculator
+  </button>
+  <button mat-menu-item (click)="showFutureValue = !showFutureValue">
+    Future Value
+  </button>
+  <button mat-menu-item (click)="showLoanAmount = !showLoanAmount">
+    Loan Amount
+  </button>
 </mat-menu>
 
 <h3>Financial Calculations</h3>
 
-<section id="financial" fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="36px" fxLayoutGap.xs="0">
+<section
+  id="financial"
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="36px"
+  fxLayoutGap.xs="0"
+>
   <div *ngIf="showHomeValue">
     <app-future-value-home></app-future-value-home>
   </div>
@@ -22,7 +37,5 @@
   <div *ngIf="showFutureValue">
     <app-future-value-investment></app-future-value-investment>
   </div>
-  <div *ngIf="showLoanAmount">
-    <app-loan-amount></app-loan-amount>
-  </div>
+  <div *ngIf="showLoanAmount"><app-loan-amount></app-loan-amount></div>
 </section>

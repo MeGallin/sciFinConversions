@@ -10,7 +10,7 @@ export class HttpGetService {
   constructor(private httpGet$: HttpClient) {}
 
   getBilliton() {
-    const billitonUrl = "../assets/billiton/billiton.txt";
-    return this.httpGet$.get(billitonUrl, { responseType: "text" });
+    const bulletinUrl = "../assets/bulletin/bulletin.txt";
+    return this.httpGet$.get(bulletinUrl, { responseType: "text" });
   }
 }

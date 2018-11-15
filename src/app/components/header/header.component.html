@@ -6,6 +6,7 @@
       <a routerLink="/home" routerLinkActive="active">Home</a>
       <a routerLink="/financial" routerLinkActive="active">Financial</a>
       <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
+      <a routerLink="/uploads" routerLinkActive="active">Uploads</a>
     </div>
 
     <div *ngIf="innerWidth < 600">
@@ -26,6 +27,10 @@
             <mat-icon>videocam</mat-icon>
             <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
           </button>
+          <button mat-menu-item>
+              <mat-icon>videocam</mat-icon>
+              <a routerLink="/uploads" routerLinkActive="active">Uploads</a>
+            </button>
         </mat-menu>
       </span>
     </div>

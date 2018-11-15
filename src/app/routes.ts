@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FinancialComponent } from './components/financial/financial.component';
 import { ScientificComponent } from './components/scientific/scientific.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { UploadsComponent } from './components/uploads/uploads.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
       path: 'scientific',
       component: ScientificComponent
+  },
+  {
+    path: 'uploads',
+    component: UploadsComponent
   },
   {
       path: '**',

@@ -21,13 +21,16 @@ import { DistanceConvertComponent } from './components/scientific/components/dis
 import { SpeedConvertComponent } from './components/scientific/components/speed-convert/speed-convert.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { BarGaugeComponent } from './components/bar-gauge/bar-gauge.component';
+import { UploadsComponent } from './components/uploads/uploads.component';
 
 // Third party modules
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { jqxCalendarComponent  } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcalendar';
-import { jqxGaugeComponent  } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgauge';
+import { jqxBarGaugeComponent  } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbargauge';
+import { jqxFileUploadComponent   } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxfileupload';
 
 
 @NgModule({
@@ -49,7 +52,10 @@ import { jqxGaugeComponent  } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxga
     ContactFormComponent,
     CalendarComponent,
     jqxCalendarComponent,
-    jqxGaugeComponent          
+    jqxBarGaugeComponent,
+    jqxFileUploadComponent,    
+    BarGaugeComponent,
+    UploadsComponent          
   ],
   imports: [
     BrowserModule,

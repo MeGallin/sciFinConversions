@@ -19,9 +19,11 @@ export class FooterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
- this.billitonService$.getBilliton().subscribe(res => {
-   this.showBilliton = res;
- })
+    setInterval(() => {
+      this.billitonService$.getBilliton().subscribe(res => {
+        this.showBilliton = res;
+      });
+    }, 2000);
     this.showTime = this.dateTime$.dateTime();
   }
 }
