@@ -1,20 +1,141 @@
 <footer>
- 
-  <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="12px">
+  <div
+    fxLayout.lt-sm="column"
+    fxLayout="row"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="12px"
+  >
     <app-contact-form fxFlex="40%"></app-contact-form>
+
+    <mat-card fxFlex="30%">
+      <mat-card-title>TFL Status Report</mat-card-title>
+
+      <mat-form-field>
+          <input matInput="" type="text" (keyup)="applyFilter($event.target.value)" placeholder="Filter" #input>
+        </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Line</th>
+          <td
+            mat-cell
+            *matCellDef="let item"
+            [ngClass]="{
+              'bakerloo-brown': item.name === 'Bakerloo',
+              'central-red': item.name === 'Central',
+              'circle-yellow': item.name === 'Circle',
+              'district-green': item.name === 'District',
+              'hammerSmithCity-purple': item.name === 'Hammersmith & City',
+              'jubilee-silver': item.name === 'Jubilee',
+              'metropolitan-purple': item.name === 'Metropolitan',
+              'northern-black': item.name === 'Northern',
+              'piccadilly-blue': item.name === 'Piccadilly',
+              'victoria-blue': item.name === 'Victoria',
+              'waterlooCity-blue': item.name === 'Waterloo & City',
+              'tflRail-blue': item.name === 'TfL Rail',
+              'DLR-blue': item.name === 'DLR',
+              'LondonOverground-orange': item.name === 'London Overground'
+            }"
+          >
+            {{ item.name }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>Service</th>
+          <td mat-cell *matCellDef="let item">
+            {{ item.serviceTypes[0].name }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td
+            mat-cell
+            *matCellDef="let item"
+            [ngClass]="{
+              'text-green':
+                item.lineStatuses[0].statusSeverityDescription ===
+                'Good Service',
+              'text-light-green':
+                item.lineStatuses[0].statusSeverityDescription ===
+                'Minor Delays',
+              'text-red':
+                item.lineStatuses[0].statusSeverityDescription ===
+                'Severe Delays',
+                'text-orange':
+                item.lineStatuses[0].statusSeverityDescription ===
+                'Part Closure',
+                'text-red-closed':
+                item.lineStatuses[0].statusSeverityDescription ===
+                'Service Closed'
+            }"
+          >
+            {{ item.lineStatuses[0].statusSeverityDescription }}
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card>
+
     <mat-card fxHide.xs fxFlex="30%">
       <mat-card-title>Bulletin</mat-card-title>
-      <mat-card-content> {{ showBilliton }} </mat-card-content>
+      <div *ngFor="let item of tubeData">
+
+          <div
+          *ngIf="
+            item.lineStatuses[0].statusSeverityDescription === 'Service Closed'
+          "
+        >
+          <mat-card-content class="text-red-closed">
+            {{ item.lineStatuses[0].reason }}
+          </mat-card-content>
+        </div>
+
+          <div
+          *ngIf="
+            item.lineStatuses[0].statusSeverityDescription === 'Part Suspended'
+          "
+        >
+          <mat-card-content class="text-red">
+            {{ item.lineStatuses[0].reason }}
+          </mat-card-content>
+        </div>
+
+          <div
+          *ngIf="
+            item.lineStatuses[0].statusSeverityDescription === 'Part Closure'
+          "
+        >
+          <mat-card-content class="text-orange">
+            {{ item.lineStatuses[0].reason }}
+          </mat-card-content>
+        </div>
+
+        <div
+          *ngIf="
+            item.lineStatuses[0].statusSeverityDescription === 'Minor Delays'
+          "
+        >
+          <mat-card-content class="text-light-green">
+            {{ item.lineStatuses[0].reason }}
+          </mat-card-content>
+        </div>
+
+        <div
+          *ngIf="
+            item.lineStatuses[0].statusSeverityDescription === 'Severe Delays'
+          "
+        >
+          <mat-card-content class="text-red">
+            {{ item.lineStatuses[0].reason }}
+          </mat-card-content>
+        </div>
+      </div>
       
-      <mat-card-title>Bulletin 3</mat-card-title>
-      <mat-card-content> Site by GG Allin </mat-card-content>
-    </mat-card>
-    <mat-card fxHide.xs fxFlex="30%">
-      <mat-card-title>Bulletin 2</mat-card-title>
-      <mat-card-content> {{ showBilliton }}</mat-card-content>
+      <mat-card-content> {{ showBulletin }}</mat-card-content>
     </mat-card>
   </div>
-  
+
   <div fxLayout="row" fxLayoutAlign="space-around center">
     <p>{{ showTime | async | date: "medium" }}</p>
   </div>

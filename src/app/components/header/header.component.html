@@ -1,12 +1,28 @@
 <header class="sticky_header">
   <mat-toolbar color="accent">
-
-    <div *ngIf="innerWidth > 600" fxLayout fxLayout.xs="row" fxLayoutAlign="space-around center" fxLayoutGap="36px"
-      fxLayoutGap.xs="0">
+    <div
+      *ngIf="innerWidth > 600"
+      fxLayout
+      fxLayout.xs="row"
+      fxLayoutAlign="space-around center"
+      fxLayoutGap="36px"
+      fxLayoutGap.xs="0"
+    >
       <a routerLink="/home" routerLinkActive="active">Home</a>
       <a routerLink="/financial" routerLinkActive="active">Financial</a>
       <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
-      <a routerLink="/uploads" routerLinkActive="active">Uploads</a>
+      
+      <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+        <mat-icon>build</mat-icon>
+      </button>
+      <mat-menu #rootMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu">Widgets</button>
+      </mat-menu>
+      <mat-menu #subMenu="matMenu">
+        <button mat-menu-item><a routerLink="/widgets/uploads" routerLinkActive="active">Uploads</a></button>
+        <button mat-menu-item><a routerLink="/widgets/data-table" routerLinkActive="active">Data Tables</a></button>
+        <button mat-menu-item>Hibernate</button>
+      </mat-menu>
     </div>
 
     <div *ngIf="innerWidth < 600">
@@ -27,13 +43,23 @@
             <mat-icon>videocam</mat-icon>
             <a routerLink="/scientific" routerLinkActive="active">Scientific</a>
           </button>
-          <button mat-menu-item>
-              <mat-icon>videocam</mat-icon>
-              <a routerLink="/uploads" routerLinkActive="active">Uploads</a>
+
+          <button mat-icon-button [matMenuTriggerFor]="rootMenu">
+              <mat-icon>build</mat-icon>
             </button>
+
+            <mat-menu #rootMenu="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="subMenu">Widgets</button>
+            </mat-menu>
+            
+            <mat-menu #subMenu="matMenu">
+              <button mat-menu-item><a routerLink="/widgets/uploads" routerLinkActive="active">Uploads</a></button>
+              <button mat-menu-item>Restart</button>
+              <button mat-menu-item>Hibernate</button>
+            </mat-menu>
+            
         </mat-menu>
       </span>
     </div>
-
   </mat-toolbar>
 </header>

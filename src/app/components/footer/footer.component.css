@@ -5,3 +5,85 @@ footer {
   color: #fff;
   font-size: 0.8em;
 }
+footer small {
+  font-size: 0.75em;
+}
+table {
+  width: 100%;
+}
+tr.mat-footer-row,
+tr.mat-row {
+  height: auto;
+}
+.text-green {
+  color: green;
+}
+.text-light-green {
+  color: lightgreen;
+}
+.text-orange {
+  color: orange;
+}
+.text-red {
+  color: crimson;
+}
+.text-red-closed {
+  color: red;
+}
+
+.bakerloo-brown {
+  font-weight: 700;
+  color: #894e24;
+}
+.central-red {
+  font-weight: 700;
+  color: #dc241f;
+}
+.circle-yellow {
+  font-weight: 700;
+  color: #ffce00;
+}
+.district-green {
+  font-weight: 700;
+  color: #007229;
+}
+.hammerSmithCity-purple {
+  font-weight: 700;
+  color: #d799af;
+}
+.jubilee-silver {
+  font-weight: 700;
+  color: #6a7278;
+}
+.metropolitan-purple {
+  font-weight: 700;
+  color: #751056;
+}
+.northern-black {
+  font-weight: 700;
+  color: black;
+}
+.piccadilly-blue {
+  font-weight: 700;
+  color: #0019a8;
+}
+.victoria-blue {
+  font-weight: 700;
+  color: #00a0e2;
+}
+.waterlooCity-blue {
+  font-weight: 700;
+  color: #76d0bd;
+}
+.tflRail-blue {
+  font-weight: 700;
+  color: #0019a8;
+}
+.DLR-blue {
+  font-weight: 700;
+  color: #00afad;
+}
+.LondonOverground-orange {
+  font-weight: 700;
+  color: #e86a10;
+}
